@@ -23,35 +23,14 @@ public class DataBaseUtils extends Base {
         try{
 
             /**DB for CM3D*/
-            URL3D = readPropertyFile.getCM3DDBconnection();
+            URL = readPropertyFile.getDBconnection();
             username3d = readPropertyFile.getDBusername();
-            password3d = readPropertyFile.getCM3DDBpassword();
+            password3d = readPropertyFile.DBpassword();
 
-            /**DB for CMQD*/
-            QDURL = readPropertyFile.getCMQDDBconnection();
-            usernameQd = readPropertyFile.getCGDBusername();
-            passwordQd = readPropertyFile.getCMQDDBpassword();
-
-
-            /**DB for CMMD*/
-//            URL = readPropertyFile.getCMMDDBconnection();
-//            username = readPropertyFile.getDBusername();
-//            password = readPropertyFile.getCMMDDBpassword();
-
-            /**DB for CMLD*/
-//            URL = readPropertyFile.getCMLDDBconnection();
-//            username = readPropertyFile.getDBusername();
-//            password = readPropertyFile.getCMLDDBpassword();
-
-            /**DB for CM2D*/
-            URL = readPropertyFile.getCM2DDBconnection();
-            username = readPropertyFile.getDBusername();
-            password = readPropertyFile.getCM2DDBpassword();
 
             Class.forName("com.informix.jdbc.IfxDriver");
             connection = DriverManager.getConnection(URL, username, password);
-            connection2 = DriverManager.getConnection(URL3D, username3d, password3d);
-            connection3 = DriverManager.getConnection(QDURL, usernameQd, passwordQd);
+
         }catch(Exception ex) {
             ex.printStackTrace();
         }

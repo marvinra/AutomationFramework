@@ -62,7 +62,7 @@ public class Hook implements DriverSource{
 	@Before
 	public void setUp() {
 
-		dataBaseUtils.startDBConnection();
+		//dataBaseUtils.startDBConnection();
 
 		// display new properties
 		// set up new properties object from file "application.properties"
@@ -276,7 +276,7 @@ public class Hook implements DriverSource{
 
 	public void tearDown(Scenario scenario) throws Exception {
 
-		dataBaseUtils.stopDBConnection();
+		//dataBaseUtils.stopDBConnection();
 
 		// take a screenshot if scenario fails
 		if (scenario.isFailed()) {
